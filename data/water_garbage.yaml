@@ -1,0 +1,17 @@
+# 数据集根目录
+path: C:/Project_PY/WaterSurface_detection/yolov5/datasets/water_garbage
+
+# 训练、验证、测试图片的子路径 (相对于上面的 path)
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 9
+names: ['botol-kaca', 'botol-plastik', 'gelas-plastik', 'kantong-plastik', 'kardus-kertas', 'kotak-kertas', 'sampah-kertas', 'sampah-logam', 'sampah-plastik']
+
+roboflow:
+  workspace: sukma-qnxuj
+  project: trash-type-detection-simplified-bexbg
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/sukma-qnxuj/trash-type-detection-simplified-bexbg/dataset/2
