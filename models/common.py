@@ -1110,10 +1110,11 @@ class Classify(nn.Module):
             x = torch.cat(x, 1)
         return self.linear(self.drop(self.pool(self.conv(x)).flatten(1)))
 
+
 # 4.13新增
 class SpatialGate(nn.Module):
     def __init__(self):
-        super(SpatialGate, self).__init__()
+        super().__init__()
         kernel_size = 7
         self.compress = ZPool()
         self.conv = nn.Conv2d(2, 1, kernel_size, stride=1, padding=(kernel_size - 1) // 2, bias=False)
@@ -1135,7 +1136,7 @@ class ZPool(nn.Module):
 
 class TripletAttention(nn.Module):
     def __init__(self, c1, c2, no_spatial=False):
-        super(TripletAttention, self).__init__()
+        super().__init__()
         self.cw = SpatialGate()
         self.hc = SpatialGate()
         self.no_spatial = no_spatial
