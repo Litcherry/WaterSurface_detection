@@ -536,7 +536,7 @@ def check_dataset(data, autodownload=True):
         assert k in data, emojis(f"data.yaml '{k}:' field missing ❌")
     if isinstance(data["names"], (list, tuple)):  # old array format
         data["names"] = dict(enumerate(data["names"]))  # convert to dict
-    assert all(isinstance(k, int) for k in data["names"].keys()), "data.yaml names keys must be integers, i.e. 2: car"
+    assert all(isinstance(k, int) for k in data["names"]), "data.yaml names keys must be integers, i.e. 2: car"
     data["nc"] = len(data["names"])
 
     # Resolve paths
@@ -1159,7 +1159,7 @@ def print_mutation(keys, results, hyp, save_dir, bucket, prefix=colorstr("evolve
     with open(evolve_yaml, "w") as f:
         data = pd.read_csv(evolve_csv, skipinitialspace=True)
         data = data.rename(columns=lambda x: x.strip())  # strip keys
-        i = np.argmax(fitness(data.values[:, :4]))  #
+        i = np.argmax(fitness(data.values[:, :4]))
         generations = len(data)
         f.write(
             "# YOLOv5 Hyperparameter Evolution Results\n"
@@ -1238,7 +1238,7 @@ def increment_path(path, exist_ok=False, sep="", mkdir=False):
         # Method 1
         for n in range(2, 9999):
             p = f"{path}{sep}{n}{suffix}"  # increment path
-            if not os.path.exists(p):  #
+            if not os.path.exists(p):
                 break
         path = Path(p)
 
