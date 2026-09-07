@@ -16,7 +16,7 @@ from copy import deepcopy
 from pathlib import Path
 
 import torch
-import torch.nn as nn
+from torch import nn
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[1]  # YOLOv5 root directory
@@ -422,7 +422,7 @@ def parse_model(d, ch):
             nn.ConvTranspose2d,
             DWConvTranspose2d,
             C3x,
-            TripletAttention
+            TripletAttention,
         }:
             c1, c2 = ch[f], args[0]
             if c2 != no:  # if not output
