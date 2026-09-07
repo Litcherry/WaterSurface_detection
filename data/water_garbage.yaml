@@ -7,7 +7,18 @@ val: valid/images
 test: test/images
 
 nc: 9
-names: ['botol-kaca', 'botol-plastik', 'gelas-plastik', 'kantong-plastik', 'kardus-kertas', 'kotak-kertas', 'sampah-kertas', 'sampah-logam', 'sampah-plastik']
+names:
+  [
+    "botol-kaca",
+    "botol-plastik",
+    "gelas-plastik",
+    "kantong-plastik",
+    "kardus-kertas",
+    "kotak-kertas",
+    "sampah-kertas",
+    "sampah-logam",
+    "sampah-plastik",
+  ]
 
 roboflow:
   workspace: sukma-qnxuj
