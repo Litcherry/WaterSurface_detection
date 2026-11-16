@@ -146,7 +146,6 @@ class WandbLogger:
 
     def val_one_image(self, pred, predn, path, names, im):
         """Evaluates model prediction for a single image, returning metrics and visualizations."""
-        pass
 
     def log(self, log_dict):
         """Save the metrics to the logging dictionary.
